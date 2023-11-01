@@ -7,15 +7,26 @@ body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+button {
+  border: none;
+  background: transparent;
+}
 .container {
   width: 1140px;
+  display: flex;
+  align-items: center;
 }
-.boards {
+.cards {
   display: flex;
   gap: 16px;
   padding: 120px 0px;
 }
-.board {
+.card {
   flex: 1;
   flex-basis: 0;
   height: fit-content;
@@ -40,13 +51,14 @@ body {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.5);
 }
-.card {
+.white {
   padding: 8px;
   border-radius: 4px;
   background-color: white;
   cursor: grab;
   display: flex;
   gap: 12px;
+  opacity: 1;
 }
 .details {
   flex: 1;
@@ -56,6 +68,7 @@ body {
   gap: 12px;
 }
 .done {
+  border: 1px solid rgba(0, 0, 0, 0.3);
   width: 24px;
   height: 24px;
   display: flex;
@@ -78,14 +91,23 @@ body {
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
 }
 .write_ikon {
+  height: 24px;
+  width: 24px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
   cursor: pointer;
+  border-radius: 50%;
+}
+.ikons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .add_btn {
   display: flex;
@@ -93,4 +115,45 @@ body {
   align-items: center;
   border-radius: 4px;
   padding: 8px;
+}
+.modal {
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+}
+.error {
+  border: 1px solid red;
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+}
+.helper_text {
+  color: red;
+  font-size: 12px;
+  padding: 4px 12px;
+}
+.tr {
+  display: flex;
+  flex-direction: column;
+}
+#status {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.submit {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  margin-top: 24px;
 }
