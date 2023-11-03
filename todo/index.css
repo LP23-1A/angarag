@@ -20,6 +20,7 @@ button {
   width: 1140px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .cards {
   display: flex;
@@ -38,6 +39,7 @@ button {
   gap: 8px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  width: 265px;
 }
 .board_header {
   padding: 8px;
@@ -46,12 +48,17 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  display: flex;
 }
 .count {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.5);
 }
-.white {
+.white_1,
+.white_2,
+.white_3,
+.white_4,
+.list {
   padding: 8px;
   border-radius: 4px;
   background-color: white;
