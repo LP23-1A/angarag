@@ -1,11 +1,11 @@
-let add_btn = document.querySelectorAll(".add_btn");
-let modal = document.querySelector(".modal");
+// let add_btn = document.querySelectorAll(".add_btn");
+// let modal = document.querySelector(".modal");
 
-function openModal() {
-  modal.style.opacity = 1;
-}
+// function openModal() {
+//   modal.style.opacity = 1;
+// }
 
-add_btn[0].onclick = openModal;
+// add_btn[0].onclick = openModal;
 // add_btn[1].onclick = openModal;
 // add_btn[2].onclick = openModal;
 // add_btn[3].onclick = openModal;
