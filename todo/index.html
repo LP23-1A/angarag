@@ -9,90 +9,88 @@
   <body>
     <div class="container">
       <div class="cards">
-        <div class="card">
+        <div class="card_container">
           <div class="board_header">
             To do
-            <!-- <span class="count">1</span> -->
           </div>
-          <div class="white_1 cardcontainer"></div>
-          <button class="add_btn">
+          <div class="card"></div>
+          <button onclick="openModal()" id="add_btn">
             <i class="fa_solid">+</i>
             <div>Add card</div>
           </button>
         </div>
-        <div class="card">
+        <!-- <div class="card_container">
           <div class="board_header">
             In progress
-            <!-- <span class="count">1</span> -->
           </div>
-          <div class="white_2"></div>
-          <button class="add_btn">
+          <div class="card"></div>
+          <button id="add_btn">
             <i class="fa_solid">+</i>
             <div>Add card</div>
           </button>
         </div>
-        <div class="card">
+        <div class="card_container">
           <div class="board_header">
             Stuck
-            <!-- <span class="count">1</span> -->
           </div>
-          <div class="white_3"></div>
-          <button class="add_btn">
+          <div class="card"></div>
+          <button id="add_btn">
             <i class="fa_solid">+</i>
             <div>Add card</div>
           </button>
         </div>
-        <div class="card">
+        <div class="card_container">
           <div class="board_header">
             Done
-            <!-- <span class="count">1</span> -->
           </div>
-          <div class="white_4"></div>
-          <button class="add_btn">
+          <div class="card"></div>
+          <button id="add_btn">
             <i class="fa_solid">+</i>
             <div>Add card</div>
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
-    <div class="modal">
-      <form>
-        <h1>Add Task</h1>
-        <div class="tr">
-          <label>Title</label>
-          <input type="text" name="title" class="error" />
-          <p class="helper_text">Бөглөнө үү</p>
-        </div>
-        <div>
-          <label>Description</label>
-          <textarea
-            name="description"
-            id="testa"
-            cols="50"
-            rows="4"
-            class="error"
-          ></textarea>
-          <p class="helper_text">Бөглөнө үү</p>
-        </div>
-        <div>
-          <label>Status</label>
-          <select name="status" id="status" class="status">
-            <option value="todo">To do</option>
-            <option value="inprogress">Inprogress</option>
-            <option value="stuck">Stuck</option>
-            <option value="done">Done</option>
-          </select>
-        </div>
-        <div>
-          <label>Priority</label>
-          <select name="Status" id="sta" class="sta">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-        </div>
-        <button class="submit">Add Task</button>
-      </form>
+    <div id="oppen">
+      <div class="modal">
+        <form>
+          <h1>Add Task</h1>
+          <div class="tr">
+            <label>Title</label>
+            <input type="text" name="title" class="error" id="title" />
+            <p class="helper_text">Бөглөнө үү</p>
+          </div>
+          <div>
+            <label>Description</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="50"
+              rows="4"
+              class="error"
+            ></textarea>
+            <p class="helper_text">Бөглөнө үү</p>
+          </div>
+          <div>
+            <label>Status</label>
+            <select name="status" id="status">
+              <option value="todo">To do</option>
+              <option value="inprogress">Inprogress</option>
+              <option value="stuck">Stuck</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <div>
+            <label>Priority</label>
+            <select name="Status" id="priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <button class="submit">Add Task</button>
+        </form>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>
