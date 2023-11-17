@@ -12,30 +12,11 @@
         <div class="flex gap-12">
           <h2 class="marg">To do</h2>
         </div>
-        <div class="white flex white_container">
-          <button class="done_ik">
-            <img src="./done-7.svg" height="20px" width="20px" alt="" />
-          </button>
-          <div class="details">
-            <h4>${e.title}</h4>
-            <p>${e.desc}</p>
-            <div class="priority">${e.priority}</div>
-          </div>
-          <div class="ikons">
-            <button>
-              <img
-                src="./cancel_cross_delete_remove_icon_131554.png"
-                height="12.5px"
-                width="12.5px"
-                alt=""
-              />
-            </button>
-            <button>
-              <img src="./write.png" height="12.5px" width="12.5px" alt="" />
-            </button>
-          </div>
-        </div>
-        <button class="flex gap_12 but_hovr padding_20">
+        <div class="card"></div>
+        <button
+          onclick="openModal()"
+          class="flex gap_12 but_hovr padding_20 add_btn"
+        >
           <div>+</div>
           <div>Add card</div>
         </button>
@@ -44,6 +25,7 @@
         <div class="flex gap_12">
           <h2>In progress</h2>
         </div>
+        <div class="card"></div>
         <button class="flex gap_12 but_hovr padding_20">
           <div>+</div>
           <div>Add card</div>
@@ -53,6 +35,7 @@
         <div class="flex gap_12">
           <h2>Stuck</h2>
         </div>
+        <div class="card"></div>
         <button class="flex gap_12 but_hovr padding_20">
           <div>+</div>
           <div>Add card</div>
@@ -62,47 +45,51 @@
         <div class="flex gap_12">
           <h2>Done</h2>
         </div>
+        <div class="card"></div>
         <button class="flex gap_12 but_hovr padding_20">
           <div>+</div>
           <div>Add card</div>
         </button>
       </div>
     </div>
-    <div class="modal">
-      <form>
-        <h1>Add Task</h1>
-        <div class="flx_direc">
-          <label>Title</label>
-          <input type="text" class="error" />
-        </div>
-        <div class="flx_direc">
-          <label>Description</label>
-          <textarea
-            name="description"
-            cols="50"
-            rows="4"
-            class="error"
-          ></textarea>
-        </div>
-        <div class="flx_direc">
-          <label>Status</label>
-          <select name="status" class="error">
-            <option value="todo">To do</option>
-            <option value="inprogress">Inprogress</option>
-            <option value="stuck">Stuck</option>
-            <option value="done">Done</option>
-          </select>
-        </div>
-        <div class="flx_direc">
-          <label>Priority</label>
-          <select name="Status" class="error">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-        </div>
-        <button class="submit">Add Task</button>
-      </form>
+    <div class="oppen">
+      <div class="modal">
+        <form>
+          <h1>Add Task</h1>
+          <div class="flx_direc">
+            <label>Title</label>
+            <input type="text" class="error" id="title" />
+          </div>
+          <div class="flx_direc">
+            <label>Description</label>
+            <textarea
+              name="description"
+              id="description"
+              cols="50"
+              rows="4"
+              class="error"
+            ></textarea>
+          </div>
+          <div class="flx_direc">
+            <label>Status</label>
+            <select name="status" id="status" class="error">
+              <option value="todo">To do</option>
+              <option value="inprogress">Inprogress</option>
+              <option value="stuck">Stuck</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+          <div class="flx_direc">
+            <label>Priority</label>
+            <select name="Status" id="priority" class="error">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <button class="submit">Add Task</button>
+        </form>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>

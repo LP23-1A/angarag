@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo</title>
+    <style>
+      body {
+        background: rgba(4, 2, 0, 0.267);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      button {
+        border: none;
+        background: transparent;
+      }
+      .container {
+        width: 1140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cards {
+        display: flex;
+        gap: 16px;
+        padding: 120px 0px;
+      }
+      .card_container {
+        flex: 1;
+        flex-basis: 0;
+        height: fit-content;
+        background-color: #ebecf0;
+        border-radius: 8px;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        width: 265px;
+      }
+      .board_header {
+        padding: 8px;
+        font-size: 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        display: flex;
+      }
+      .count {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .list,
+      .card {
+        padding: 8px;
+        border-radius: 4px;
+        background-color: white;
+        cursor: grab;
+        display: flex;
+        gap: 12px;
+        opacity: 1;
+      }
+      .details {
+        flex: 1;
+        flex-basis: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .done {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .priority {
+        width: fit-content;
+        padding: 4px 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        font-size: 12px;
+      }
+      .remove_ikon {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+      }
+      .write_ikon {
+        height: 24px;
+        width: 24px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+      .ikons {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      #add_btn {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        border-radius: 4px;
+        padding: 8px;
+      }
+      #oppen {
+        display: none;
+      }
+      .modal {
+        position: absolute;
+        background-color: white;
+        border-radius: 8px;
+        padding: 16px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .error {
+        border: 1px solid red;
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+      }
+      .helper_text {
+        color: red;
+        font-size: 12px;
+        padding: 4px 12px;
+      }
+      .tr {
+        display: flex;
+        flex-direction: column;
+      }
+      #status {
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+      }
+      .submit {
+        padding: 8px;
+        border-radius: 4px;
+        border: none;
+        background-color: #000;
+        color: white;
+        cursor: pointer;
+        margin-top: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>todo</title>
+        <link rel="stylesheet" href="./index.css" />
+      </head>
+      <body>
+        <div class="container">
+          <div class="cards">
+            <div class="card_container">
+              <div class="board_header">To do</div>
+              <div class="card"></div>
+              <button onclick="openModal()" id="add_btn">
+                <i class="fa_solid">+</i>
+                <div>Add card</div>
+              </button>
+            </div>
+            <!-- <div class="card_container">
+          <div class="board_header">
+            In progress
+          </div>
+          <div class="card"></div>
+          <button id="add_btn">
+            <i class="fa_solid">+</i>
+            <div>Add card</div>
+          </button>
+        </div>
+        <div class="card_container">
+          <div class="board_header">
+            Stuck
+          </div>
+          <div class="card"></div>
+          <button id="add_btn">
+            <i class="fa_solid">+</i>
+            <div>Add card</div>
+          </button>
+        </div>
+        <div class="card_container">
+          <div class="board_header">
+            Done
+          </div>
+          <div class="card"></div>
+          <button id="add_btn">
+            <i class="fa_solid">+</i>
+            <div>Add card</div>
+          </button>
+        </div> -->
+          </div>
+        </div>
+        <div id="oppen">
+          <div class="modal">
+            <form>
+              <h1>Add Task</h1>
+              <div class="tr">
+                <label>Title</label>
+                <input type="text" name="title" class="error" id="title" />
+                <p class="helper_text">Бөглөнө үү</p>
+              </div>
+              <div>
+                <label>Description</label>
+                <textarea
+                  name="description"
+                  id="description"
+                  cols="50"
+                  rows="4"
+                  class="error"
+                ></textarea>
+                <p class="helper_text">Бөглөнө үү</p>
+              </div>
+              <div>
+                <label>Status</label>
+                <select name="status" id="status">
+                  <option value="todo">To do</option>
+                  <option value="inprogress">Inprogress</option>
+                  <option value="stuck">Stuck</option>
+                  <option value="done">Done</option>
+                </select>
+              </div>
+              <div>
+                <label>Priority</label>
+                <select name="Status" id="priority">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+              <button class="submit">Add Task</button>
+            </form>
+          </div>
+        </div>
+      </body>
+    </html>
+    <script>
+      // let submit = document.querySelector(".submit")
+      // function list() {
+      //   let title = document.getElementById("title")
+      //   let desc = document.getElementById("description")
+      //   let status = document.getElementById("status")
+      //   let priority = document.getElementById("priority")
+
+      //   data.push({title, desc, status, priority})
+      //   render(data)
+      //   }
+      //   submit.onclick = list
+
+      // function render(data) {
+      //   let card = document.querySelectorAll(".card")
+      //   card[0].innerHTML = ""
+      //   card[1].innerHTML = ""
+      //   card[2].innerHTML = ""
+      //   card[3].innerHTML = ""
+
+      //   data.map((e) => {
+      //     let carddata = `<div class="card">
+      //     <div class="list" draggable="true">
+      //       <button class="done">
+      //         <img src="done-7.svg" alt="" width="10.5px" height="12px" />
+      //       </button>
+      //       <div class="details">
+      //         <h4>${e.title}</h4>
+      //         <p>${e.desc}</p>
+      //         <div class="priority">${e.priority}</div>
+      //       </div>
+      //       <div class="ikons">
+      //         <button class="remove_ikon">
+      //           <img
+      //             src="./cancel_cross_delete_remove_icon_131554.png"
+      //             width="9px"
+      //             height="12px"
+      //             alt=""
+      //           />
+      //         </button>
+      //         <button class="write_ikon">
+      //           <img src="./write.png" alt="" width="12px" height="12px" />
+      //         </button>
+      //       </div>
+      //     </div>
+      //   </div>`
+      //   console.log(carddata);
+      //     if (e.status === "todo") {
+      //       card[0].innerHTML += carddata
+      //     }
+      //     if (e.status === "inprogress") {
+      //       card[1].innerHTML += carddata
+      //     }
+      //     if (e.status === "stuck") {
+      //       card[2].innerHTML += carddata;
+      //     }
+      //     if (e.status === "done") {
+      //       card[3].innerHTML += carddata;
+      //     }
+      //     card.innerHTML += carddata;
+      //   });
+      // }
+      let oppen = document.getElementById("oppen");
+      let input = document.querySelector("input");
+      let add_modal = document.getElementById("add_btn");
+
+      function openModal() {
+        if (oppen.style.display == "block") oppen.style.display = "none";
+        else oppen.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
