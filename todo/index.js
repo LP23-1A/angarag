@@ -25,9 +25,9 @@ function list(ev) {
 
 submit.onclick = list;
 
-let doneList = (e) => {
+let doneList = (el) => {
   data.map((item) => {
-    if (item.id === e.id) {
+    if (item.id === el.id) {
       item.status = "done";
     }
   });
