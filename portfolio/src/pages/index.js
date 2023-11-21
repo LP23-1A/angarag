@@ -1,7 +1,13 @@
+import Head from "@/components/header";
+import Pro from "@/components/profile";
+
 export default function Home() {
   return (
-    <header>
-      
-    </header>
-  )
+    <div>
+      <header>
+        <Head />
+      </header>
+      <Pro />
+    </div>
+  );
 }
