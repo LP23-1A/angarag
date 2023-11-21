@@ -1,3 +1,9 @@
+.Boddy {
+  margin: 0;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
 body p {
   margin: 0;
 }
@@ -46,9 +52,12 @@ body p {
 .main {
   padding: 0px 32px;
   margin: 96px 80px;
-  gap: 48px;
   display: flex;
+}
+.gap_48 {
+  gap: 48px;
   flex-direction: column;
+  display: flex;
 }
 .sagar {
   font-size: 60px;
@@ -94,4 +103,23 @@ body p {
 }
 .sgar {
   position: relative;
+}
+.midd_container {
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 0px;
+  gap: 48px;
+}
+.about {
+  background: #E5E7EB;
+  color: #4B5563;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 20px;
 }
