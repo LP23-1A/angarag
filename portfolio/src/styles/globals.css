@@ -13,7 +13,7 @@ body p {
 }
 .flx {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .po-rela {
@@ -45,6 +45,11 @@ body p {
   color: #f9fafb;
   border: 0;
 }
+.ttle {
+  font-family: Inter;
+  font-size: 30px;
+  color: #111827;
+}
 .all {
   padding: 0px 32px;
   margin: 16px 80px;
@@ -54,6 +59,10 @@ body p {
   margin: 96px 80px;
   display: flex;
 }
+/* .gap48_2 {
+  gap: 48px;
+  display: flex;
+} */
 .gap_48 {
   gap: 48px;
   flex-direction: column;
@@ -105,21 +114,34 @@ body p {
   position: relative;
 }
 .midd_container {
-  background: #F9FAFB;
+  background: #f9fafb;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding: 96px 0px;
   gap: 48px;
 }
+.disll {
+  justify-content: center;
+  display: flex;
+}
 .about {
-  background: #E5E7EB;
-  color: #4B5563;
+  background: #e5e7eb;
+  color: #4b5563;
   border: none;
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4px 20px;
+  width: 100px;
+  height: 20px;
+}
+.ul_gap {
+  gap: 80px;
+  display: flex;
+}
+.gap {
+  gap: 160px;
+  display: flex;
 }

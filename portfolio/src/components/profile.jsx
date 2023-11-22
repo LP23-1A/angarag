@@ -6,7 +6,7 @@ import Man from "./SagarImg";
 
 export default function Pro() {
   return (
-    <div className="main flx">
+    <div className="main gap48_2 flx">
       <div className="gap_48">
         <div className="text">
           <h1 className="sagar">Hi, I'M Sagar</h1>
