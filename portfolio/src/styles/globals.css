@@ -124,6 +124,14 @@ body p {
 .disll {
   justify-content: center;
   display: flex;
+  align-items: center;
+}
+.button_and_text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  color: #4b5563;
 }
 .about {
   background: #e5e7eb;
@@ -144,4 +152,28 @@ body p {
 .gap {
   gap: 160px;
   display: flex;
+}
+.img-icons {
+  width: 64px;
+  height: 64px;
+}
+.Icon-dev {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 130px;
+  align-items: center;
+  justify-content: center;
+}
+.icon-txt {
+  color: var(--gray-600, #4b5563);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
 }
