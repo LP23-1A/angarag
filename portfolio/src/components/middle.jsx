@@ -2,13 +2,13 @@ import MnTwo from "./Sagar2";
 
 export default function Midd() {
   return (
-    <div className="main midd_container">
+    <div className=" midd_container">
       <div className="disll">
         <button className="about">About me</button>
       </div>
       <div className="flx gap48_2">
-        <div>
-          <div className="gray"></div>
+        <div className="po-rela">
+          <div className="mid_gray "></div>
           <MnTwo />
         </div>
         <div>

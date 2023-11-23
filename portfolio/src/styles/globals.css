@@ -1,3 +1,6 @@
+* {
+  margin: 0;
+}
 .Boddy {
   margin: 0;
   justify-content: center;
@@ -133,6 +136,18 @@ body p {
   gap: 16px;
   color: #4b5563;
 }
+.mid_gray {
+  width: 400px;
+height: 480px;
+flex-shrink: 0;
+border: 8px solid var(--gray-50, #F9FAFB);
+background: var(--gray-200, #E5E7EB);
+}
+.zurag {
+  position: absolute;
+  top: -20px;
+  left: 35px;
+}
 .about {
   background: #e5e7eb;
   color: #4b5563;
@@ -176,4 +191,22 @@ body p {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+}
+.upWork {
+  width: 100px;
+  height: 20px;
+}
+.card--container {
+  display: flex;
+align-items: center;
+justify-content: space-between;
+align-self: stretch;
+  gap: 48px;
+  padding: 32px;
+  border-radius: 12px;
+background: var(--gray-default, #FFF);
+width: 896px;
+}
+.card_mid_title {
+  margin: 0;
 }
