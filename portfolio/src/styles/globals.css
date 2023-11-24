@@ -138,10 +138,10 @@ body p {
 }
 .mid_gray {
   width: 400px;
-height: 480px;
-flex-shrink: 0;
-border: 8px solid var(--gray-50, #F9FAFB);
-background: var(--gray-200, #E5E7EB);
+  height: 480px;
+  flex-shrink: 0;
+  border: 8px solid var(--gray-50, #f9fafb);
+  background: var(--gray-200, #e5e7eb);
 }
 .zurag {
   position: absolute;
@@ -198,14 +198,14 @@ background: var(--gray-200, #E5E7EB);
 }
 .card--container {
   display: flex;
-align-items: center;
-justify-content: space-between;
-align-self: stretch;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
   gap: 48px;
   padding: 32px;
   border-radius: 12px;
-background: var(--gray-default, #FFF);
-width: 896px;
+  background: var(--gray-default, #fff);
+  width: 896px;
 }
 .card_mid_title {
   margin: 0;
