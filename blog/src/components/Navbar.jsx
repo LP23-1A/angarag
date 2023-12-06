@@ -1,8 +1,7 @@
 export default function Navbar() {
   return (
     <div className=" flex flex-col items-center px-[350px]">
-      <div className="flex gap-[21px] py-[32px] justify-center w-[100%]">
-        <div className="flex gap-[118px]">
+      <div className="flex gap-[21px] py-[32px] justify-between w-[100%]">
           <div>
             <svg
               width="158"
@@ -61,12 +60,11 @@ export default function Navbar() {
               />
             </svg>
           </div>
-          <ul className="flex items-center gap-[40px] px-[262px] text-slate-600">
+          <ul className="flex items-center gap-[40px] text-slate-600">
             <li>Home</li>
             <li>Blog</li>
             <li>Contact</li>
           </ul>
-        </div>
         <div className="flex justify-center items-center">
           <input className="border rounded-[5px]" type="search" />
           <svg

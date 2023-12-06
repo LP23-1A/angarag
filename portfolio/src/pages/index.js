@@ -20,14 +20,14 @@ export default function Home() {
           <header className="all">
             <div className="flx">
               <div>
-                <h1>LOGO</h1>
+                <h1 className="ttles_color">LOGO</h1>
               </div>
               <div className="flx">
                 <ul className="flx lis">
-                  <li>About</li>
-                  <li>Work</li>
-                  <li>Testimonials</li>
-                  <li>Contact</li>
+                  <li className="Pcolor">About</li>
+                  <li className="Pcolor">Work</li>
+                  <li className="Pcolor">Testimonials</li>
+                  <li className="Pcolor">Contact</li>
                 </ul>
                 <button onClick={DarkMode} className="Swtich-ligth">
                   {<Sun />}
