@@ -23,7 +23,7 @@ export default function Blog() {
           </div>
           <p className="text-[#495057] text-[12px] flex gap-[20px]">View All</p>
         </div>
-        {Data2.map((e) => {
+        {BlogData.map((e) => {
           return (
             <div className="flex gap-[20px]">
               <div className="gap-[16px] flex flex-col border px-[16px] py-[16px] rounded-xl ">
