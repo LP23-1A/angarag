@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <section className="  justify-center flex-col gap-[100px] flex w-[100%]">
       <Navbar />
-      <Blog />
+      <Miss />
       <Foot />
     </section>
   );
