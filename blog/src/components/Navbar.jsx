@@ -4,7 +4,7 @@ export default function Navbar() {
   const Contact = () => {
     router.push("/Contact");
   };
-  const index = () => {
+  const Index = () => {
     router.push("/Index");
   };
   const Blogg = () => {
@@ -72,7 +72,7 @@ export default function Navbar() {
           </svg>
         </div>
         <ul className="flex items-center gap-[40px] text-slate-600">
-          <button onClick={index}>Home</button>
+          <button onClick={Index}>Home</button>
           <button onClick={Blogg}>Blog</button>
           <button onClick={Contact}>Contact</button>
         </ul>

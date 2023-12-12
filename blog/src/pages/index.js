@@ -14,7 +14,6 @@ export default function Home() {
     <section className="  justify-center flex-col gap-[100px] flex w-[100%]">
       <Navbar />
       <Cras />
-      <Cards />
       <Blog />
       <Foot />
     </section>
