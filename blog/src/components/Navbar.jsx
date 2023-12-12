@@ -1,4 +1,15 @@
+import { useRouter } from "next/router";
 export default function Navbar() {
+  const router = useRouter();
+  const Contact = () => {
+    router.push("/Contact");
+  };
+  const index = () => {
+    router.push("/Index");
+  };
+  const Blogg = () => {
+    router.push("/Blogg");
+  };
   return (
     <div className=" flex flex-col items-center px-[350px]">
       <div className="flex gap-[21px] py-[32px] justify-between w-[100%]">
@@ -61,9 +72,9 @@ export default function Navbar() {
           </svg>
         </div>
         <ul className="flex items-center gap-[40px] text-slate-600">
-          <li>Home</li>
-          <li>Blog</li>
-          <li>Contact</li>
+          <button onClick={index}>Home</button>
+          <button onClick={Blogg}>Blog</button>
+          <button onClick={Contact}>Contact</button>
         </ul>
         <div className="flex justify-center items-center">
           <input className="border rounded-[5px]" type="search" />

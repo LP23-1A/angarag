@@ -1,5 +1,3 @@
-export default function cras() {
-    return (
-        <div></div>
-    )
+export default function Cras() {
+  return <div>cron cron</div>;
 }
