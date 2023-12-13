@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 
@@ -55,7 +55,10 @@ export default function Blog() {
               View All
             </button>
           </div>
-          <div className="flex gap-[20px] flex-wrap justify-center">
+          {data &&
+            data.slice(0, 4).map((item) => {
+              return (
+                <Link  href={`/${item.id}`} className="flex gap-[20px] flex-wrap justify-center">
             {data.slice(0, Count).map((el) => {
               return (
                 <div className="flex gap-[20px] w-[392px]">
@@ -82,7 +85,10 @@ export default function Blog() {
                 </div>
               );
             })}
-          </div>
+            </Link>
+              );
+            })}
+          
           <button onClick={handler}>Load more</button>
         </div>
       </div>
