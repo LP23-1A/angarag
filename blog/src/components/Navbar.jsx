@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 export default function Navbar() {
   const router = useRouter();
@@ -72,9 +73,12 @@ export default function Navbar() {
           </svg>
         </div>
         <ul className="flex items-center gap-[40px] text-slate-600">
-          <button onClick={Index}>Home</button>
+          <Link href="/">Home</Link>
+          <Link href="/Blogg">Blog</Link>
+          <Link href="/Contact">Contact</Link>
+          {/* <button onClick={Index}>Home</button>
           <button onClick={Blogg}>Blog</button>
-          <button onClick={Contact}>Contact</button>
+          <button onClick={Contact}>Contact</button> */}
         </ul>
         <div className="flex justify-center items-center">
           <input className="border rounded-[5px]" type="search" />

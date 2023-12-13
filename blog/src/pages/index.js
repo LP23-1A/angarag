@@ -4,7 +4,6 @@ import Cards from "@/components/Trend";
 import Blog from "@/components/Blog";
 import Foot from "@/components/Footer";
 import Cras from "@/components/Crausel";
-import Contact from "@/components/ContactUs";
 import Miss from "@/components/Error";
 
 const inter = Inter({ subsets: ["latin"] });
