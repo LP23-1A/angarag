@@ -1,8 +1,1 @@
-export const Carsoul = [
-  {
-    img: "",
-    buttn: "";
-    title: "";
-    date: "";
-  },
-];
+export const Carsoul = [{}];
