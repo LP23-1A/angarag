@@ -10,6 +10,7 @@ export default function Blog() {
   const valueRef = useRef("");
   const initData = useRef([]);
   const router = useRouter();
+
   const getData = async (api) => {
     let res = await axios.get(api);
     initData.current = res.data;
@@ -56,39 +57,38 @@ export default function Blog() {
             </button>
           </div>
           {data &&
-            data.slice(0, 4).map((item) => {
+            data.slice(0, 6).map((item) => {
               return (
-                <Link  href={`/${item.id}`} className="flex gap-[20px] flex-wrap justify-center">
-            {data.slice(0, Count).map((el) => {
-              return (
-                <div className="flex gap-[20px] w-[392px]">
-                  <div className="gap-[16px] flex flex-col border px-[16px] py-[16px] rounded-xl ">
-                    <img
-                      className="w-[360px] h-[240px]"
-                      src={el.social_image}
-                      alt=""
-                    />
-                    <div>
-                      <button className="px-[10px] py-[4px] bg-indigo-100 rounded-[6px] text-[#4B6BFB]">
-                        {el.tag_list}
-                      </button>
-                    </div>
-                    <div className="gap-[20px] flex flex-col">
-                      <h1 className="text-[24px] text-[#181A2A]">
-                        {el.description}
-                      </h1>
-                      <p className="text-[#97989F]">
-                        {el.readable_publish_date}
-                      </p>
+                <Link
+                  href={`/${item.id}`}
+                  className="flex gap-[20px] flex-wrap justify-center"
+                >
+                  <div className="flex gap-[20px] w-[392px]">
+                    <div className="gap-[16px] flex flex-col border px-[16px] py-[16px] rounded-xl ">
+                      <img
+                        className="w-[360px] h-[240px]"
+                        src={item.social_image}
+                        alt=""
+                      />
+                      <div>
+                        <button className="px-[10px] py-[4px] bg-indigo-100 rounded-[6px] text-[#4B6BFB]">
+                          {item.tag_list}
+                        </button>
+                      </div>
+                      <div className="gap-[20px] flex flex-col">
+                        <h1 className="text-[24px] text-[#181A2A]">
+                          {item.description}
+                        </h1>
+                        <p className="text-[#97989F]">
+                          {item.readable_publish_date}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
-            </Link>
-              );
-            })}
-          
+
           <button onClick={handler}>Load more</button>
         </div>
       </div>
