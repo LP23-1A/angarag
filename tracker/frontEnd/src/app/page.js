@@ -3,8 +3,6 @@ import Welcome from './components/Login'
 
 export default function Home() {
   return (
-    <section>
-      <Welcome/>
-    </section>
+    <Welcome/>
   )
 }
