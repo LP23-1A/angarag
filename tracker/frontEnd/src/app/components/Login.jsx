@@ -16,6 +16,7 @@ export default function Welcome() {
         </div>
         </div>
         <div className="bg-[#0166FF] w-[50%]"></div>
+        <div></div>
       </div>
     )
   }
