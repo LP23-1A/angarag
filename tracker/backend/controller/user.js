@@ -81,13 +81,37 @@ export const getUsers =  async (req, res) => {
   const { name, email } = req.body;
   try {
     const queryText =
-      `SELECT * FROM users WHERE name='${name}' AND email='${email}'`;
+      `SELECT * FROM users WHERE name='${name}' OR email='${email}'`;
     const response = await pool.query(queryText);
     res.send(response.rows);
   } catch (error) {
     console.error(error);
   }
 };
+
+export const addColumn =  async (req, response) => {
+  try {
+    const queryText = `ALTER TABLE users
+    ADD COLUMN avatar_img bytea,
+     ADD COLUMN createdAt TIMESTAMP,
+     ADD COLUMN updatedAt TIMESTAMP,
+    ADD COLUMN currency_type TEXT DEFAULT 'MNT'`;
+// const queryText = `
+//     ALTER TABLE users
+//     ADD COLUMN avatar_img bytea,
+//     ADD COLUMN createdAt TIMESTAMP,
+//     ADD COLUMN updatedAt TIMESTAMP,
+//     ADD COLUMN currency_type TEXT DEFAULT 'MNT'
+//     `;
+
+    await pool.query(queryText);
+    response.send("okey");
+  } catch (error) {
+    response.send("error").end();
+    console.error(error);
+  }
+};
+
   export const createUser =  async (req, response) => {
     const { name, email } = req.body;
     // console.log(name, email, 'req.body');

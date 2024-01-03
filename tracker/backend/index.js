@@ -8,13 +8,15 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 const app = express();
 
-app.use('/users', user)
-
 app.use(bp.json());
+
+app.use('/users', user)
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}.`);
 });
+
+
 
 app.post("/createTable", async (_, res) => {
   try {
