@@ -14,9 +14,9 @@ export default function Welcome() {
 </svg>
 
         </div>
+        <h1 className="">Create Geld account</h1>
         </div>
         <div className="bg-[#0166FF] w-[50%]"></div>
-        <div></div>
       </div>
     )
   }

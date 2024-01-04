@@ -18,23 +18,6 @@ app.listen(PORT, () => {
 
 
 
-app.post("/createTable", async (_, res) => {
-  try {
-    const tableQueryText = `
-      CREATE TABLE IF NOT EXISTS users (
-      id SERIAL PRIMARY KEY,
-      name VARCHAR(255) NOT NULL,
-      email VARCHAR(255) NOT NULL
-    )`;
-
-    // const createQuery = `CREATE TABLE users (id SERIAL PRIMARY KEY, name TEXT NOT NULL, email TEXT NOT NULL)`
-    const created = await pool.query(tableQueryText);
-    res.json({ created });
-  } catch (error) {
-    console.error(error);
-  }
-});
-
 
 // app.get("/user", async (req, res) => {
 //   try {

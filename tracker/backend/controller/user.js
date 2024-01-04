@@ -113,17 +113,35 @@ export const addColumn =  async (req, response) => {
 };
 
   export const createUser =  async (req, response) => {
-    const { name, email } = req.body;
+    const { name, email, password, avatar_img, createdAt, updatedAt, currency_type } = req.body;
     // console.log(name, email, 'req.body');
     try {
       const queryText =
-        `INSERT INTO users (name, email) VALUES ($1, $2) RETURNING *`;
-      const res = await pool.query(queryText, [name, email]);
+        `INSERT INTO users (name, email, password, avatar_img, createdAt, updatedAt, currency_type) 
+        VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`;
+      const res = await pool.query(queryText, [name, email, password, avatar_img, createdAt, updatedAt, currency_type]);
       console.log(res);
       response.send(res.rows[0])
     } catch (error) {
       console.error(error);
       response.send('error query')
+    }
+  };
+
+  export const createTable =  async (_, res) => {
+    try {
+      const tableQueryText = `
+        CREATE TABLE IF NOT EXISTS users (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL
+      )`;
+  
+      // const createQuery = `CREATE TABLE users (id SERIAL PRIMARY KEY, name TEXT NOT NULL, email TEXT NOT NULL)`
+      const created = await pool.query(tableQueryText);
+      res.json({ created });
+    } catch (error) {
+      console.error(error);
     }
   };
   
@@ -133,7 +151,7 @@ export const addColumn =  async (req, response) => {
     try {
       const queryText = `DELETE FROM users WHERE (name = '${name}' AND email = '${email}') OR id = '${id}'`;
       await pool.query(queryText);
-      response.send("ok");
+      response.send("success");
     } catch (error) {
       response.send("error").end();
       console.error(error);
@@ -141,10 +159,10 @@ export const addColumn =  async (req, response) => {
   };
   
   export const updateUser =  async (req, response) => {
-    const { name, email, id } = req.body;
+    const { name, email, id, password, avatar_img, createdAt, updatedAt, currency_type } = req.body;
   
     try {
-      const queryText = `UPDATE users SET name = '${name}', email = '${email}' WHERE id = '${id}'`;
+      const queryText = `UPDATE users SET name = '${name}', email = '${email}',password = '${password}', avatar_img = '${avatar_img}', createdAt = '${createdAt}', updatedAt = '${updatedAt}', currency_type = '${currency_type}'  WHERE id = '${id}'`;
       await pool.query(queryText);
       response.send("updated");
     } catch (error) {
