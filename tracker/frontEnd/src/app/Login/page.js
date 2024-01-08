@@ -8,7 +8,7 @@ export default function Login() {
     return (
         <div>
             <div className="flex h-screen w-screen">
-      <div className="w-[50%] flex justify-center items-center flex-col gap-2">
+      <div className="w-[50%] flex justify-center items-center flex-col gap-[40px]">
         <div className="flex justify-center items-center gap-[9.5px] p">
           <svg
             width="25"
@@ -47,15 +47,15 @@ export default function Login() {
             />
           </svg>
         </div>
-        <h1 className="">Welcome Back</h1>
-        <p>Welcome back, Please enter your details</p>
-        <input className="border-[1px]"  type="email" placeholder="Email" />
-        <input
-          className="border-[1px]"
-          type="password"
-          placeholder="Password"
-        />
-        <button className="border-[1px] bg-[#0166FF] text-[#FFF]">Log in</button>
+        <div className="gap-[8px] flex flex-col justify-center items-center">
+        <h1 className="text-[24px] text-[#0F172A] text-[600]">Welcome Back</h1>
+        <p className="text-[16px] text-[#334155]">Welcome back, Please enter your details</p>
+        </div>
+        <div className="gap-[16px] flex flex-col">
+        <input type="text" placeholder="Email" className="input input-bordered w-full max-w-xs " />
+        <input type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
+        <button className="btn  bg-[#0166FF] text-[#FFF] w-[320px]">Log in</button>
+        </div>
         <div className="flex gap-2">
             <p>Don’t have account?</p>
             <button onClick={()=> router.push("/Sign")} className="text-[#0166FF]">Sign up</button>
