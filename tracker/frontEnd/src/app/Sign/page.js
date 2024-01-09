@@ -21,12 +21,12 @@ export default function Signup() {
 
     //localStorage.setItem("input", JSON.stringify(input));
 
-    let res = await axios.post(api,  {
+    let res = await axios.post(api, {
       name: name,
-     email: email,
-     password: password,
-   });
-     console.log(res, "res");
+      email: email,
+      password: password,
+    });
+    console.log(res, "res");
   };
 
   const router = useRouter();
@@ -72,26 +72,52 @@ export default function Signup() {
           </svg>
         </div>
         <div className="gap-[8px] flex flex-col justify-center items-center">
-        <h1 className="text-[24px] text-[#0F172A] text-[600]">Create Geld account</h1>
-        <p className="text-[16px] text-[#334155]">
-        Sign up below to create your Wallet account
-        </p>
+          <h1 className="text-[24px] text-[#0F172A] text-[600]">
+            Create Geld account
+          </h1>
+          <p className="text-[16px] text-[#334155]">
+            Sign up below to create your Wallet account
+          </p>
         </div>
         <div className="flex flex-col gap-[16px]">
-        <input className="input input-bordered w-full max-w-xs " onChange={(event) => setname(event.target.value)} type="name" placeholder="Name" />
-        <input className="input input-bordered w-full max-w-xs " onChange={(event) => setemail(event.target.value)} type="email" placeholder="Email" />
-        <input
-          className="input input-bordered w-full max-w-xs "
-          onChange={(event) => setpassword(event.target.value)}
-          type="password"
-          placeholder="Password"
-        />
-        <input type="password" placeholder="Re-password" className="input input-bordered w-full max-w-xs" />
-        <button className="btn  bg-[#0166FF] text-[#FFF] w-[320px]" onClick={handler}>Sign up</button>
+          <input
+            className="input input-bordered w-full max-w-xs "
+            onChange={(event) => setname(event.target.value)}
+            type="name"
+            placeholder="Name"
+          />
+          <input
+            className="input input-bordered w-full max-w-xs "
+            onChange={(event) => setemail(event.target.value)}
+            type="email"
+            placeholder="Email"
+          />
+          <input
+            className="input input-bordered w-full max-w-xs "
+            onChange={(event) => setpassword(event.target.value)}
+            type="password"
+            placeholder="Password"
+          />
+          <input
+            type="password"
+            placeholder="Re-password"
+            className="input input-bordered w-full max-w-xs"
+          />
+          <button
+            className="btn  bg-[#0166FF] text-[#FFF] w-[320px]"
+            onClick={handler}
+          >
+            Sign up
+          </button>
         </div>
         <div className="flex gap-2">
-            <p>Already have account?</p>
-            <button onClick={()=> router.push("/Login")} className="text-[#0166FF]">Log in</button>
+          <p>Already have account?</p>
+          <button
+            onClick={() => router.push("/Login")}
+            className="text-[#0166FF]"
+          >
+            Log in
+          </button>
         </div>
       </div>
       <div className="bg-[#0166FF] w-[50%]"></div>
