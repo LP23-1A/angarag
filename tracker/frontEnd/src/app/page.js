@@ -7,7 +7,10 @@ import Login from "./Login/page";
 import Waiting from "./wait/page";
 import Test from "@/components/Login";
 import Finish from "./third/page";
+import Dashboard from "./dashboard/page";
 
 export default function Home() {
-  return <Test />;
+  return (
+    <Login/>
+  )
 }

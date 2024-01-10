@@ -101,7 +101,14 @@ export default function Test() {
                 </button>
               </div>
             </div>
-            <div></div>
+            <div className="flex flex-col gap-[16px]">
+              <p className="text-[#1F2937] text-[16px]">
+              Amount Range
+              </p>
+              <div className="flex">
+                <input type="number" />
+              </div>
+            </div>
           </div>
           <div></div>
         </div>
