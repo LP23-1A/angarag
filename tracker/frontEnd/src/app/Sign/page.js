@@ -106,7 +106,6 @@ export default function Signup() {
           <button
             className="btn  bg-[#0166FF] text-[#FFF] w-[320px]"
             onClick={handler}
-            onClick={() => router.push("/money")}
           >
             Sign up
           </button>
