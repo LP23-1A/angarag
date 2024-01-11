@@ -19,14 +19,18 @@ export default function Signup() {
       password,
     };
 
+
+    localStorage.setItem("data", JSON.stringify(input));
+      router.push("/money");
+
     //localStorage.setItem("input", JSON.stringify(input));
 
-    let res = await axios.post(api, {
-      name: name,
-      email: email,
-      password: password,
-    });
-    console.log(res, "res");
+    // let res = await axios.post(api, {
+    //   name: name,
+    //   email: email,
+    //   password: password,
+    // });
+    // console.log(res, "res");
   };
 
   const router = useRouter();

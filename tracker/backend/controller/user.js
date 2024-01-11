@@ -78,11 +78,14 @@ export const getUsers =  async (req, res) => {
 
  export const getOneUser =  async (req, res) => {
      console.log(req.body);
-  const { name, email } = req.body;
+  const { email, password } = req.body;
   try {
     const queryText =
-      `SELECT * FROM users WHERE name='${name}' OR email='${email}'`;
+      `SELECT * FROM users WHERE email='${email}' AND password='${password}'`;
     const response = await pool.query(queryText);
+   if (response.rows.length !== 0){
+      res.send("success");
+   }
     res.send(response.rows);
   } catch (error) {
     console.error(error);

@@ -1,9 +1,22 @@
 'use client'
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import { useState } from "react";
+
+const api = 'http://localhost:8000/users/user';
 
 export default function Login() {
+  const router = useRouter();
+    const [email,  setemail] = useState('');
+    const [password,  setpassword] = useState('');
 
-    const router = useRouter();
+    const handler = async () => {  
+      let res = await axios.post(api, {  email , password });
+
+      if (res.data === "success"){
+        router.push("/dashboard");
+      }
+    }
 
     return (
         <div>
@@ -52,9 +65,9 @@ export default function Login() {
         <p className="text-[16px] text-[#334155]">Welcome back, Please enter your details</p>
         </div>
         <div className="gap-[16px] flex flex-col">
-        <input type="text" placeholder="Email" className="input input-bordered w-full max-w-xs " />
-        <input type="password" placeholder="Password" className="input input-bordered w-full max-w-xs" />
-        <button className="btn  bg-[#0166FF] text-[#FFF] w-[320px]">Log in</button>
+        <input type="text" onChange={(event) => setemail(event.target.value)} placeholder="Email" className="input input-bordered w-full max-w-xs " />
+        <input type="password" onChange={(event) => setpassword(event.target.value)} placeholder="Password" className="input input-bordered w-full max-w-xs" />
+        <button onClick={handler} className="btn  bg-[#0166FF] text-[#FFF] w-[320px]">Log in</button>
         </div>
         <div className="flex gap-2">
             <p>Don’t have account?</p>

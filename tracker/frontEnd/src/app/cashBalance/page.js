@@ -1,4 +1,9 @@
+'use client'
+import { useRouter } from "next/navigation";
+
 export default function Balance() {
+
+  const router = useRouter();
     return(
         <div className="pt-[40px] pb-[399px] flex flex-col gap-[141px]">
       <div className="flex flex-col gap-[48px] justify-center items-center">
@@ -37,7 +42,7 @@ export default function Balance() {
           </div>
         </div>
         <div className="flex flex-col gap-[32px] justify-center ">
-            <button className="btn  bg-[#0166FF] text-[#FFF] w-[384px] rounded-[20px]">Confirm </button>
+            <button onClick={() => router.push("/third")} className="btn  bg-[#0166FF] text-[#FFF] w-[384px] rounded-[20px]">Confirm </button>
         </div>
       </div>
     </div>

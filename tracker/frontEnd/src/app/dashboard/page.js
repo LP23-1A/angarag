@@ -30,8 +30,8 @@ export default function Dashboard() {
           <button className="text-[16px] text-[#FFFFFF] bg-[#0166FF] p-[12px] rounded-[20px] h-[32px] flex justify-center items-center">
             + Record
           </button>
-          <div class="avatar">
-            <div class="w-[40px] h-[40px] rounded-full">
+          <div className="avatar">
+            <div className="w-[40px] h-[40px] rounded-full">
               <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
             </div>
           </div>

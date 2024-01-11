@@ -1,4 +1,16 @@
+'use client'
+import axios from "axios";
+import { useRouter } from "next/navigation";
+const api = "http://localhost:8000/users";
+
 export default function Finish() {
+
+  const router = useRouter();
+  let data = JSON.parse(localStorage.getItem("data"));
+  const handler = async () => {
+       let res = await axios.post(api, {name: data.name,email: data.email, password: data.password, currency_type: data.currency});
+      router.push("/dashboard");
+  };
     return(
         <div className="pt-[40px] pb-[399px] flex flex-col gap-[141px]">
       <div className="flex flex-col gap-[48px] justify-center items-center">
@@ -35,7 +47,7 @@ export default function Finish() {
         <p className="text-[#475569] text-[16px] flex justify-center text-center">
         Your very first account has been created. Now <br /> continue to dashboard and start tracking
             </p>
-            <button className="btn  bg-[#0166FF] text-[#FFF] w-[384px] rounded-[20px]">Go to Dashboard</button>
+            <button onClick={handler} className="btn  bg-[#0166FF] text-[#FFF] w-[384px] rounded-[20px]">Go to Dashboard</button>
         </div>
       </div>
     </div>
