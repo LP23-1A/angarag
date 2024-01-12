@@ -78,7 +78,7 @@ export default function Currency() {
               <option value = "USD" className="text-[#1F2937] text-[16px]">
                 USD - Dollar
               </option>
-              <option value="URO" className="text-[#1F2937] text-[16px]">URO</option>
+              <option value="EUR" className="text-[#1F2937] text-[16px]">EUR</option>
             </select>
           </div>
         </div>

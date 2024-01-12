@@ -116,14 +116,14 @@ export const addColumn =  async (req, response) => {
 };
 
   export const createUser =  async (req, response) => {
-    const { name, email, password} = req.body;
+    const { name, email, password, currency_type} = req.body;
     // console.log(name, email, 'req.body');
     try {
       const queryText =
-        `INSERT INTO users (name, email, password) 
-        VALUES ($1, $2, $3) RETURNING *`;
-      const res = await pool.query(queryText, [name, email, password]);
-      console.log(res);
+        `INSERT INTO users (name, email, password, currency_type) 
+        VALUES ($1, $2, $3, $4) RETURNING *`;
+      const res = await pool.query(queryText, [name, email, password, currency_type]);
+      console.log(res, "okey");
       response.send(res.rows[0])
     } catch (error) {
       console.error(error);
@@ -136,7 +136,7 @@ export const addColumn =  async (req, response) => {
       const tableQueryText = `
         CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
+        name VARCHAR(255 ) NOT NULL,
         email VARCHAR(255) NOT NULL
       )`;
   
