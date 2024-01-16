@@ -2,6 +2,8 @@
 import Cate from "@/components/Data";
 import { useRouter } from "next/navigation";
 import Modal from "@/components/CategoryModal";
+import Two from "@/components/SecondRecord";
+import ReModal from "@/components/RecordModal";
 
 export default function Records() {
   const router = useRouter();
@@ -32,7 +34,10 @@ export default function Records() {
             <button className="text-[#0F172A] text-[16px]">Records</button>
           </div>
           <div className="flex gap-[24px] justify-center items-center">
-            <button className="text-[16px] text-[#FFFFFF] bg-[#0166FF] p-[12px] rounded-[20px] h-[32px] flex justify-center items-center">
+            <button
+              onClick={() => document.getElementById("my_modal_4").showModal()}
+              className="text-[16px] text-[#FFFFFF] bg-[#0166FF] p-[12px] rounded-[20px] h-[32px] flex justify-center items-center"
+            >
               + Record
             </button>
             <div className="avatar">
@@ -44,10 +49,15 @@ export default function Records() {
         </div>
         {/* header */}
         <div className="bg-[#F3F4F6] flex flex-col gap-[20px] px-[120px] py-[40px]">
-          <div className="flex">
+          <div className="flex gap-[24px]">
             <div className="bg-[#F9FAFB] py-[24px] px-[16px] rounded-[12px] flex flex-col gap-[24px]">
               <h1 className="text-[24px] text-[#000000]">Records</h1>
-              <button className="flex gap-[4px] bg-[#0166FF] text-[16px] justify-center items-center rounded-[20px] text-[#FFFFFF] p-[12px] w-[250px] h-[32px]">
+              <button
+                onClick={() =>
+                  document.getElementById("my_modal_4").showModal()
+                }
+                className="flex gap-[4px] bg-[#0166FF] text-[16px] justify-center items-center rounded-[20px] text-[#FFFFFF] p-[12px] w-[250px] h-[32px]"
+              >
                 + Add
               </button>
               <input
@@ -59,24 +69,15 @@ export default function Records() {
                 <h2 className="text-[#1F2937] text-[16px] ">Types</h2>
                 <div className="flex flex-col gap-[8px]">
                   <div className="flex justify-start gap-[8px] items-center">
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-xs"
-                    />
+                    <input type="checkbox" className="checkbox checkbox-xs" />
                     <p className="text-[#1F2937] text-[16px]">All</p>
                   </div>
                   <div className="flex justify-start gap-[8px] items-center">
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-xs"
-                    />
+                    <input type="checkbox" className="checkbox checkbox-xs" />
                     <p className="text-[#1F2937] text-[16px]">Income</p>
                   </div>
                   <div className="flex justify-start gap-[8px] items-center">
-                    <input
-                      type="checkbox"
-                      className="checkbox checkbox-xs"
-                    />
+                    <input type="checkbox" className="checkbox checkbox-xs" />
                     <p className="text-[#1F2937] text-[16px]">Expense</p>
                   </div>
                 </div>
@@ -92,7 +93,12 @@ export default function Records() {
                 </div>
                 <div className="flex flex-col gap-[8px]">
                   <Cate />
-                  <button className="flex items-center gap-[8px] px-[8px]" onClick={()=>document.getElementById('my_modal_3').showModal()}>
+                  <button
+                    className="flex items-center gap-[8px] px-[8px]"
+                    onClick={() =>
+                      document.getElementById("my_modal_3").showModal()
+                    }
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -107,7 +113,6 @@ export default function Records() {
                     </svg>
                     <p className="text-[16px]">Add Category</p>
                   </button>
-                  <Modal/>
                 </div>
               </div>
               <div className="flex flex-col gap-[16px]">
@@ -117,10 +122,14 @@ export default function Records() {
                 </div>
               </div>
             </div>
-            <div></div>
+            <div className="flex flex-col w-[894px]">
+              <Two />
+            </div>
           </div>
         </div>
       </div>
+      <ReModal />
+      <Modal />
     </div>
   );
 }
