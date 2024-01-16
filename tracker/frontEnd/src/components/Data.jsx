@@ -1,4 +1,9 @@
+import axios from "axios";
+
+const api = 'http://localhost:8001/category/getdata';
+
 const data = [
+
   {
     content: "Food & Drinks",
   },

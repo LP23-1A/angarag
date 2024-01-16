@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
-import { pool } from "./db.js";
-import { user } from "./router/user.js";
-import { category } from "./router/category.js";
+import { pool } from "./src/db.js";
+import { user } from "./src/router/user.js";
+import { category } from "./src/router/category.js";
 import cors from "cors";
 
 dotenv.config();

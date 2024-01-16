@@ -44,19 +44,11 @@ export const createCategory = async (_, res) => {
 };
 
 export const addCategory = async (req, response) => {
-  const { id, name, description, createdAt, updatedAt, category_img } =
-    req.body;
+  const { name} = req.body;
+  console.log(req.body);
   try {
-    const queryText = `INSERT INTO category (id, name, description,createdAt, updatedAt, category_img) 
-        VALUES ($1, $2, $3, $4, $5,$6) RETURNING *`;
-    const res = await pool.query(queryText, [
-      id,
-      name,
-      description,
-      createdAt,
-      updatedAt,
-      category_img,
-    ]);
+    const queryText = `INSERT INTO category ( name)  VALUES ($1) RETURNING *`;
+    const res = await pool.query(queryText, [name,]);
     console.log(res, "okey");
     response.send(res.rows[0]);
   } catch (error) {

@@ -3,19 +3,24 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useState } from "react";
 
-const api = 'http://localhost:8000/users/user';
+const api = 'http://localhost:8001/users/user';
 
 export default function Login() {
   const router = useRouter();
     const [email,  setemail] = useState('');
     const [password,  setpassword] = useState('');
-
     const handler = async () => {  
-      let res = await axios.post(api, {  email , password });
-
+      try {
+        let res = await axios.post(api, {  email , password });
       if (res.data === "success"){
         router.push("/dashboard");
+      } else {
+        console.log('error');
       }
+      } catch (error) {
+        console.log(error);
+      }
+      
     }
 
     return (
