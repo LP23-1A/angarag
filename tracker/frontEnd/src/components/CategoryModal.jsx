@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState } from "react";
 const api = "http://localhost:8001/category/adddata";
 export default function Modal() {
-  const [name, setName] = useState();
 
   const handler = async () => {
     try {
@@ -17,7 +16,6 @@ export default function Modal() {
       <div className="modal-box gap-[32px] flex flex-col">
         <div className="flex flex-col gap-2">
           <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
               ✕
             </button>
@@ -34,8 +32,7 @@ export default function Modal() {
         </div>
         <button
           className="btn btn-wide bg-[#16A34A] text-[#F9FAFB] "
-          onClick={handler}
-        >
+          onClick={handler}>
           Add
         </button>
       </div>

@@ -8,5 +8,5 @@ const category = express.Router()
 
 category.route('/').post(createCategory);
 category.route('/adddata').post(addCategory);
-category.route('/getdata').get(getCategory);
+category.route('/getdata').post(getCategory);
 export {category};

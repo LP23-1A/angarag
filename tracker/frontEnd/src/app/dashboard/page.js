@@ -1,6 +1,7 @@
 'use client'
 import Records from "@/components/Records";
 import { useRouter } from "next/navigation";
+import ReModal from "@/components/RecordModal";
 
 export default function Dashboard() {
 
@@ -27,7 +28,7 @@ export default function Dashboard() {
           <button onClick={()=> router.push("/records")} className="text-[#0F172A] text-[16px]">Records</button>
         </div>
         <div className="flex gap-[24px] justify-center items-center">
-          <button className="text-[16px] text-[#FFFFFF] bg-[#0166FF] p-[12px] rounded-[20px] h-[32px] flex justify-center items-center">
+          <button onClick={() => document.getElementById("my_modal_4").showModal()} className="text-[16px] text-[#FFFFFF] bg-[#0166FF] p-[12px] rounded-[20px] h-[32px] flex justify-center items-center">
             + Record
           </button>
           <div className="avatar">
@@ -206,6 +207,7 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
+    <ReModal />
     </div>
   );
 }

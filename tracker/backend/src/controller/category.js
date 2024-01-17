@@ -58,11 +58,10 @@ export const addCategory = async (req, response) => {
 };
 
 export const getCategory = async (req, res) => {
-  const { name } = req.body;
   try {
-    const queryText = `SELECT * FROM category WHERE name='${name}'`;
+    const queryText = `SELECT * FROM category`;
     const response = await pool.query(queryText);
-    res.send(response.rows);
+    res.json(response.rows);
   } catch (error) {
     console.error(error);
   }

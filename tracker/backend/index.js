@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import { pool } from "./src/db.js";
 import { user } from "./src/router/user.js";
 import { category } from "./src/router/category.js";
+import { transaction } from "./src/router/transaction.js";
 import cors from "cors";
 
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(cors({ origin: "*" }));
 
 app.use("/users", user);
 app.use("/category", category);
+app.use("/transaction", transaction);
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}.`);
 });
