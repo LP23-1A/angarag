@@ -107,7 +107,7 @@ export const deleteUser = async (req, response) => {
   const { name, email, id } = req.body;
 
   try {
-    const queryText = `DELETE FROM users WHERE (name = '${name}' AND email = '${email}') OR id = '${id}'`;
+    const queryText = `DELETE FROM users WHERE (name = '${name}' OR email = '${email}')`;
     await pool.query(queryText);
     response.send("success");
   } catch (error) {

@@ -2,41 +2,6 @@
 import axios from "axios";
 import { useState , useEffect } from "react";
 const api = "http://localhost:8001/category/adddata";
-const data = [
-  {
-    content: "Food & Drinks",
-  },
-  {
-    content: "Shopping",
-  },
-  {
-    content: "Housing",
-  },
-  {
-    content: "Transportation",
-  },
-  {
-    content: "Vehicle",
-  },
-  {
-    content: "Life & Entertainment",
-  },
-  {
-    content: "Communication, PC",
-  },
-  {
-    content: "Financial expenses",
-  },
-  {
-    content: "Investments",
-  },
-  {
-    content: "Income",
-  },
-  {
-    content: "Others",
-  },
-];
 
 export default function Cate() {
 

@@ -1,3 +1,9 @@
+"use client";
+import axios from "axios";
+import { useState } from "react";
+
+const api = "http://localhost:8001/transaction/adddata";
+
 export default function ReModal() {
   return (
     <div>
@@ -58,6 +64,7 @@ export default function ReModal() {
               
             </div>
           </div>
+          <button className="border">add</button>
         </div>
       </dialog>
     </div>

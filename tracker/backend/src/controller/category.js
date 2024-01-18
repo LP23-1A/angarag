@@ -57,6 +57,19 @@ export const addCategory = async (req, response) => {
   }
 };
 
+export const deleteCategory = async (req, response) => {
+  const { name } = req.body;
+
+  try {
+    const queryText = `DELETE FROM category WHERE (name = '${name}')`;
+    await pool.query(queryText);
+    response.send("success");
+  } catch (error) {
+    response.send("error").end();
+    console.error(error);
+  }
+};
+
 export const getCategory = async (req, res) => {
   try {
     const queryText = `SELECT * FROM category`;

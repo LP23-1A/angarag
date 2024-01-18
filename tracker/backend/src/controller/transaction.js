@@ -33,11 +33,11 @@ export const createTransaction = async (_, res) => {
 };
 
 export const addTransaction = async (req, response) => {
-  const { name, description, createAt, updateAt, category_image } = req.body;
+  const { name, description, createAt, updateAt, category_id } = req.body;
   try {
     const queryText =
-      "INSERT INTO category (name, description, createAt, updateAt, category_image) VALUES ($1, $2) RETURNING *";
-    const res = await pool.query(queryText, [name, description]);
+      "INSERT INTO transactions (name) VALUES ($1) RETURNING *";
+    const res = await pool.query(queryText, [name]);
     response.send(res.rows[0]);
   } catch (error) {
     console.error(error);
@@ -49,7 +49,7 @@ export const getTransaction = async (req, response) => {
   const { name, description, createAt, updateAt, category_image } = req.body;
   try {
     const queryText =
-      "INSERT INTO category (name, description, createAt, updateAt, category_image) VALUES ($1, $2) RETURNING *";
+      "INSERT INTO transactions (name, description, createAt, updateAt, category_image) VALUES ($1, $2) RETURNING *";
     const res = await pool.query(queryText, [name, description]);
     response.send(res.rows[0]);
   } catch (error) {
