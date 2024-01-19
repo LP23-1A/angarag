@@ -3,8 +3,27 @@ import Cate from "@/components/Data";
 import { useRouter } from "next/navigation";
 import Two from "@/components/SecondRecord";
 import ReModal from "@/components/RecordModal";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const api = "http://localhost:8001/transaction/getdata";
 
 export default function Records() {
+
+  const [recordata, setRecordata] = useState("");
+  const getRecordhandler = async () => {  
+    try {
+      let res = await axios.get(api);
+        setRecordata(res.data);
+      //console.log("response: ", res.data).name;
+    } catch (error) {
+      console.log(error);
+    }}
+    
+    useEffect(() => {
+      getRecordhandler();
+    }, []);
+
   const router = useRouter();
 
   return (
@@ -102,7 +121,7 @@ export default function Records() {
               </div>
             </div>
             <div className="flex flex-col w-[894px]">
-              <Two />
+              <Two data = {recordata}/>
             </div>
           </div>
         </div>

@@ -6,7 +6,8 @@ const data = [
   },
 ];
 
-export default function AddRecord() {
+export default function AddRecord(props) {
+
   return (
     <>
       {data.map((el) => {

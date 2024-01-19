@@ -3,6 +3,9 @@ import axios from "axios";
 import { useState } from "react";
 
 const api = "http://localhost:8001/transaction/adddata";
+// const [transaction, settransaction] = useState([]);
+// const [newtransaction, setNewtransaction] = useState("");
+
 
 export default function ReModal() {
   return (
@@ -33,9 +36,7 @@ export default function ReModal() {
                     <span className="label-text">Category</span>
                   </div>
                   <select className="select select-bordered">
-                    <option>
-                      Pick one
-                    </option>
+                    <option>Pick one</option>
                     <option>Star Wars</option>
                     <option>Harry Potter</option>
                     <option>Lord of the Rings</option>
@@ -51,7 +52,7 @@ export default function ReModal() {
                   <span className="label-text">Payee</span>
                 </div>
                 <select className="select select-bordered">
-                  <option disabled selected>
+                  <option>
                     Pick one
                   </option>
                   <option>Star Wars</option>
@@ -61,10 +62,19 @@ export default function ReModal() {
                   <option>Star Trek</option>
                 </select>
               </label>
-              
+              <label className="form-control w-full max-w-xs">
+                <div className="label">
+                  <span className="label-text">Note</span>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  className="input input-bordered w-full max-w-xs"
+                />
+              </label>
             </div>
           </div>
-          <button className="border">add</button>
+          <button className="border p-[12px] text-[#F9FAFB] bg-[#0166FF]">add</button>
         </div>
       </dialog>
     </div>
