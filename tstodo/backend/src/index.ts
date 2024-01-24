@@ -1,22 +1,25 @@
 import express from "express";
-import dotenv from "dotenv";
 import { connectDatabase } from "./utils/database";
-const PORT = 8000;
+import { auth } from "./router/user";
 
-dotenv.config();
+const PORT = 8000;
 
 const start = () => {
     const app = express();
+    app.use(express.json());
+
     connectDatabase();
 
+    app.use('/auth', auth)
+
     app.get('/', (req, res) => {
-        res.status(200).send({success:true, msg:'hello world'})
+        res.status(200).send({ success: true, msg: 'Hello world' });
     })
 
     app.listen(PORT, () => {
-        console.log("server runiing");
-        
-    })
+        console.log("Server is running");
+    });
+
 }
 
 start();
