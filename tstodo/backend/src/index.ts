@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { connectDatabase } from './utils/database';
-import { auth } from './router/User';
+import { auth } from './router/user';
 
 const PORT = 8000;
 
